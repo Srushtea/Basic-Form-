@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 id="id1">DOCUMENT OBJECT MODEL</h1>
+<p>change the color of the text by clicking on button</p>
+
+<button type="button" onclick="document.getElementById('id1').style.color = 'red'">
+Click Me!</button>
+
+<p>Click the button to get the style property of the H1 element.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p>The created style element contains css declarations that will change the font properties of this document.</p>
+<button onclick="myFunction1()">Try font size!</button>
+
+<p id="demo"></p>
+
+<h2>Finding HTML Elements by Query Selector</h2>
+
+<p>Hello World!</p>
+
+<p class="intro">The DOM is very useful.</p>
+<p class="intro">This example demonstrates the <b>querySelectorAll</b> method.</p>
+<p id="demo"></p>
+
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("id1").style.color;
+      document.getElementById("demo").innerHTML = x;
+    }
+
+    function myFunction1() {
+        var y = document.createElement("STYLE");
+        var t = document.createTextNode("body {font: 20px verdana;}");
+        y.appendChild(t);
+        document.head.appendChild(y);
+      }
+
+      var x = document.querySelectorAll("p.intro");
+      document.getElementById("demo").innerHTML = 'The first paragraph (index 0) with class="intro": ' + x[0].innerHTML;
+
+    
+    </script>
+<h2>DOM DATE AND TIME DISPLAY</h2>
+<button type="button"
+onclick="document.getElementById('de').innerHTML = Date()">
+Click me to display Date and Time.</button>
+<p id="de"></p>
+
+        
+</body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>DOM Demo</title>
+    <h1>Different DOM examples</h1>
+    <img id="image" src="img1.jpg" width="500" height="280"><br>
+    <button type="button"
+    onclick="document.getElementById('image').src ='img2.gif' ">Change the image!</button>
+
+<script type="application/javascript">
+
+function coinFlip()
+{     (Math.floor(Math.random() * 2) == 0) ? alert('it is Head') : alert('it is Tail') }
+
+function setBodyAttr(attr, value)
+{
+      if (document.body) 
+       eval('document.body.'+attr+'="'+value+'"');
+      else 
+       notSupported();
+    }
+</script>
+</head> 
+
+<body>
+    <h2>Time details:</h2>
+    <button type="button"
+     onclick="getElementById('demo').innerHTML=Date()">Time?</button>
+    <p id="demo"></p>
+
+      <font size=20>Select Text Color &nbsp; &nbsp; &nbsp;</font> 
+   
+        <select style="font-size:20px; width: 120px; height: 25px;" onChange="setBodyAttr('text',this.options[this.selectedIndex].value);"> 
+
+          <option value="black">Black 
+
+          <option value="red">Red 
+          
+          <option value="Green">Green 
+
+          <option value="purple">Purple 
+
+          <option value="blue">Blue 
+          
+          <option value="brown">Brown 
+
+        </select><br>
+
+<font size=20>Select Background Color &nbsp; &nbsp; &nbsp;</font> 
+ 
+        <select style="font-size:20px; width: 120px; height: 25px;" onChange="setBodyAttr('bgColor',
+
+        this.options[this.selectedIndex].value);"> 
+      <option value="red">Red 
+      <option value="Green">Green 
+      <option value="purple">Purple 
+	  <option value="blue">Blue 
+      <option value="brown">Brown 
+      <option value="white">White 
+      <option value="lightgrey">Gray
+
+        </select>
+<br>
+       <br><br>
+<center>
+        <input type="button" style="font-size:20px; width: 120px; height: 100px;" value="Flip a Coin" onclick="coinFlip()" />
+</center>      
+</form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<html>   
+   <head>
+      <title>Form Validation</title>  
+      <link rel="stylesheet" type="text/css"  href="style.css">
+      <script type = "text/javascript">
+   
+   
+      // Form validation code will come here.
+      function validate() {
+      
+        if( document.myForm.Name.value == "" ) {
+            alert( "Please provide your name!" );
+            document.myForm.Name.focus() ;
+            return false;
+        }
+		
+        if( document.myForm.EMail.value == "" ) {
+            alert( "Please provide your Email!" );
+            document.myForm.EMail.focus() ;
+            return false;
+        }
+		
+		var emailID = document.myForm.EMail.value;
+        atpos = emailID.indexOf("@");
+        dotpos = emailID.lastIndexOf(".");
+         
+      if (atpos < 1 || ( dotpos - atpos < 2 )) {
+            alert("Please enter correct email ID")
+            document.myForm.EMail.focus() ;
+            return false;	
+      }
+		if (document.myForm.gender.value == "")
+		{
+			alert("Please select Gender!!");
+			return false;
+		}
+		if(document.myForm.address.value=="")
+		{
+			alert("Please enter the Permanent Address");
+			document.myForm.address.focus();
+			return false;
+		}
+		if(document.myForm.address1.value=="")
+		{
+			alert("Please enter the Address for correspondace");
+			document.myForm.address.focus();
+			return false;
+		}
+		if(document.myForm.bdate.value=="")
+		{
+			alert("Please enter the Birth Date");
+			document.myForm.bdate.focus();
+			return false;
+		}
+		if( document.myForm.mob.value == "" || isNaN( document.myForm.mob.value ) ||
+            document.myForm.mob.value.length != 10 ) 
+		{	
+          
+			alert( "Please provide a 10 digit Mobile number." );
+            
+            document.myForm.mob.focus() ;
+            return false;
+        }
+        if( document.myForm.Zip.value == "" || isNaN( document.myForm.Zip.value ) ||
+            document.myForm.Zip.value.length != 6 ) 
+		{	
+          
+            alert( "Please provide a 6 digit zip number." );
+            document.myForm.Zip.focus() ;
+            return false;
+        }
+		
+		if( document.myForm.Country.value == "-1" ) 
+		{
+            alert( "Please provide your country!" );
+            return false;
+        }
+		
+		
+	       return( true );
+    } 
+</script>      
+
+<style>
+	   form,th,tr{
+		           border:5px;
+		         }
+</style>
+</head>
+   
+   <body>
+   <h1> <center> Student Registration Form </center> </h1>
+      <form action = "submit.html" name = "myForm" onsubmit = "return(validate());">
+         <table cellspacing = "2" cellpadding = "2" border = "1">
+            
+            <tr>
+               <td align = "right">Name</td>
+               <td><input type = "text" name = "Name" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "right">EMail</td>
+               <td><input type = "text" name = "EMail" /></td>
+            </tr>
+            
+<tr>
+	<td align=right> Gender</td>
+	<td> <input type="radio" name="gender" value="Male">Male <br>
+	<input type="radio" name="gender" value="Female">Female</td>
+</tr>
+
+<tr>
+	<td> Permanent Address </td>
+	<td> <input type="text" name="address" height="100" size="50"/></td>
+</tr>
+
+<tr>
+	<td> Correspondence Address </td>
+	<td> <input type="text" name="address1" height="100" size="50"/></td>
+</tr>
+
+<tr>
+	<td> Birth Date </td>
+	<td> <input type="date" name="bdate"/> </td>
+</tr>
+
+ <tr>
+               <td align = "right">Mobile Number</td>
+               <td><input type = "text" name = "mob" maxlength="10" /></td>
+            </tr>
+            <tr>
+               <td align = "right">Zip Code</td>
+               <td><input type = "text" name = "Zip" maxlength="6" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "right">Country</td>
+               <td>
+                  <select name = "Country">
+                     <option value = "-1" selected>[choose yours]</option>
+                     <option value = "1">USA</option>
+                     <option value = "2">UK</option>
+                     <option value = "3">INDIA</option>
+                  </select>
+               </td>
+            </tr>
+            
+            <tr>
+			<td colspan="2" padding="5px"><center><input type = "submit" value = "Submit"> </center> </td>
+              
+            </tr>
+            
+         </table>
+      </form>      
+   </body>
+</html>
+
+
